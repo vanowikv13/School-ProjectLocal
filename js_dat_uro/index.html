@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dato Liczer</title>
+        <script type="text/javascript">
+            
+            function leapYear(x) {
+                if((x%4 == 0 && x % 100 != 0) || (x%400 == 0))
+                    return true;
+                else return false;
+            }
+            
+            function DataCalculate() {
+                
+                var hourFromBirth = 0;
+                
+                var year = parseInt(prompt("Witaj, Podaj rok swojego urodzenia: ",""));
+                var month = parseInt(prompt("Podaj miesiąc twoich urodzin",""));
+                var hour = parseInt(prompt("Podaj o której godzinie się urodziłeś:",""));
+                var day = parseInt(prompt("Podaj dzień swoich urodzin:",""));
+                var currentDate = new Date();
+                
+                //in leap year February has 29 days
+                var dayM = [29,31,28,31,30,31,30,31,31,30,31,30,31];
+                
+                for(var i=year+1; i <= currentDate.getFullYear()-1; i++) {
+                    if(leapYear(i))
+                        hourFromBirth+=366*24;
+                    else
+                        hourFromBirth+=365*24;
+                }
+                
+                hourFromBirth+=(dayM[month] - day) * 24;
+                hourFromBirth-=24 - hour;
+                
+                for(var i = month+1;i<=12;i++)
+                    hourFromBirth+=(dayM[i]*24);
+                
+                for(var i =1;i<=currentDate.getMonth();i++)
+                    hourFromBirth+=dayM[i]*24;
+                
+                hourFromBirth+=(currentDate.getDate()*24) - (24 - currentDate.getHours());
+                
+                document.write(hourFromBirth);
+                
+            }
+        </script>
+    </head>
+    <bod>
+        <h1>Obliczanie ilości godizn od urodzenia</h1>
+        <button onclick="javascript:DataCalculate()">Sprawdź</button>
+    </bod>
+</html>

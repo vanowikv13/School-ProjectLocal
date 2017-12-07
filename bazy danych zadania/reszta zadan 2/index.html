@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+
+<body>
+   <script>
+      var date = new Date();
+      document.write("zadanie 8<br>");
+      var day8 = date.getDate(),
+         month8 = date.getMonth(),
+         year8 = date.getFullYear(),
+         numbrOfDay = 0;
+      var monthTab = [29, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      while (true) {
+         if (month8 > 12) {
+            month8 = 1;
+            year8++;
+         }
+         if (month8 == 2) {
+            if (leapYear(year8)) {
+               for (var i = day8; i <= monthTab[0]; i++)
+                  numbrOfDay++;
+            } else {
+               for (var i = day8; i <= monthTab[2]; i++)
+                  numbrOfDay++;
+            }
+         } else {
+            if (month8 == 12 && day8 < 24) {
+               for (var i = day8; i <= 23; i++)
+                  numbrOfDay++;
+               break;
+            } else {
+               for (var i = day8; i <= monthTab[month8]; i++)
+                  numbrOfDay++;
+            }
+         }
+         month8++;
+      }
+
+      document.write(numbrOfDay + "<br>");
+      document.write("<br>zadanie 9<br>")
+      var x = parseFloat(prompt("Podaj 1 liczbe: ", ""));
+      var y = parseFloat(prompt("podaj 2 liczbę: ", ""));
+      document.write("mnożenie: " + (x * y) + "<br>");
+      document.write("dzielenie: " + (x / y) + "<br><br>");
+      document.write("zadanie 10<br>");
+      var c = parseFloat(prompt("Podaj temperature w °C",""));
+      document.write(c+"°C = "+(c*(9/5) + 32)+"°F");
+   
+      document.write("<br><br>zadanie 11<br>");
+      document.write(location.href+"<br><br>");
+      
+      document.write("zadanie 14<br>");
+      var d = parseInt(prompt("podaj liczbe",""));      
+      if((d - 13) > 13)
+         document.write(d - 2*13);
+      else
+         document.write(d - 13);
+
+   </script>
+</body>
+
+</html>

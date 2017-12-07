@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>2.Data</title>
+</head>
+
+<body>
+   <script>
+      document.write("Zadanie 2<br>");
+      var date = new Date();
+      document.write(date.getMonth() + "-" + date.getDate() + "-" + date.getFullYear() + "<br>");
+      document.write(date.getMonth() + " / " + date.getDate() + " / " + date.getFullYear() + "<br>");
+      document.write(date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() + "<br>");
+      document.write(date.getDate() + " / " + date.getMonth() + " / " + date.getFullYear() + "<br>");
+
+      document.write("<br>zadanie 3<br>");
+      document.write("pole trójkąta dla boków 5,6,7 -> ");
+      var p = (5 + 6 + 7) / 2;
+      document.write(Math.sqrt(p * (p - 5) * (p - 6) * (p - 7)) + "<br><br>");
+
+      document.write("zadanie 4<br>");
+      var word = "egzaminzawodowyE14";
+      var arr = word.split("");
+      document.write("słowo " + word + " po odwróceniu to: <br>");
+      word = "";
+      for (var i = arr.length - 1; i >= 0; i--) {
+         word += arr[i];
+      }
+
+      document.write(word + "<br><br>");
+      document.write("Zadanie 5<br>");
+
+      function leapYear(x) {
+         if ((x % 4 == 0 && x % 100 != 0) || (x % 400 == 0))
+            return true;
+         return false;
+      }
+
+      if (leapYear(date.getFullYear()))
+         document.write("Aktualny rok jest przestępny");
+      else document.write("Aktualny rok nie jest przestępyn");
+
+
+      document.write("<br><br>Zadanie 6<br>");
+      //for years 2014 - 2050
+      function checkIfFirstFebrearyIsSunday(year) {
+         if (year == 2017 || year == 2023 || year == 2035 || year == 2040 || year == 2045)
+            return true;
+         else return false;
+      }
+
+      if (checkIfFirstFebrearyIsSunday(date.getFullYear()))
+         document.write("pierwszy stycznia w roku: " + date.getFullYear() + " jest niedzielą<br>");
+      else
+         document.write("w " + date.getFullYear() + " niedziela nie jest przestępna<br>");
+
+      document.write("<br>zadanie 7:<br>");
+      var rand = Math.floor((Math.random() * 10) + 1);
+      var randUser = parseInt(prompt("zgadnij liczbę od 1 do 10", ""));
+      if (randUser == rand)
+         document.write("zgadłeś<br>");
+      else
+         document.write("nie zgadłeś, wylosowana liczba to: " + rand + "<br>");
+
+     
+      
+   </script>
+</body>
+
+</html>

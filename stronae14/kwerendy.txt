@@ -1,0 +1,4 @@
+SELECT model,typ from artykuly order by cena asc;
+select p.nazwa, a.model, a.typ from artykuly a, producenci p where p.IDProducenci = a.ProducenciID;
+select a.model from artykuly a, magazyn m where a.IDArtykuly = m.IDMagazyn and m.Ilosc > 0;
+insert into producenci VALUES(3,"Samsung", "samasung.pl");

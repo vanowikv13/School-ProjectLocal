@@ -1,0 +1,57 @@
+.baner {
+   background-color: #829EB9;
+   height: 50px;
+   font-family: Arial;
+   text-align: center;
+}
+
+.left {
+   background-color: #B3C6D9;
+   height: 600px;
+   width: 25%;
+   float: left;
+}
+
+.prawy {
+   background-color: #E0E9F1;
+   height: 600px;
+   width: 75%;
+   float: left;
+   text-align: center;
+}
+
+.footer {
+   background-color: #829EB9;
+   font-family: Arial;
+   text-align: right;
+}
+
+img {
+   margin: 30px;
+   padding: 10px;
+   border: dotted #B3C6D9 2px;
+}
+
+table {
+   margin: 30px;
+   border: solid 2px;
+   width: 70%;
+}
+
+tr:hover {
+   color: white;
+   background-color:  blue;
+}
+
+th {
+   background-color: #B3C6D9;
+   border: solid black 2px;
+}
+
+td {
+   border: solid 2px;
+}
+
+p {
+   margin: 30px;
+}

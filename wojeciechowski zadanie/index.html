@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Strona internetowa</title>
+    <meta charset="utf-8">
+    <script>
+        function totalNumbers() {
+            var x = prompt("Podaj liczbę początkową: ", "");
+            var y = prompt("Podaj liczbę końcową: ", "");
+            if (x < y) { //malejący
+                for (var i = x; i <= y; i++)
+                    document.write(i + "<br />");
+            } else { //rosnący
+                for (var i = x; i >= y; i--)
+                    document.write(i + "<br />");
+            }
+            document.write('<a href="index.html">strona główna</a>');
+
+
+        }
+
+        function number() {
+            var a = prompt("Podaj liczbę całkowitą", "");
+            while (true) {
+                var b = prompt("Podaj hasło:", "");
+                if (b == "liczba")
+                    break;
+                else
+                    alert("hasło nieprawidłowe");
+            }
+            if (a > 0)
+                document.write("Liczba " + a + " jest dodatnia");
+            if (a < 0)
+                document.write("Liczba " + a + " jest ujemna");
+            if (a == 0)
+                document.write("Liczba " + a + " jest zerem");
+        }
+
+        function description() {
+            alert("98111309154");
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="baner">
+        <a href="index.html"><img src="matematyka.jpg"></a>
+    </div>
+    <div class="left">
+        <a href="javascript:description()">Opis</a><br>
+        <a href="javascript:number()">Jaka to liczba?</a><br />
+        <a href="javascript:totalNumbers()">Liczby całkowite z zakresu</a>
+    </div>
+    <div class="right">
+        Zawartość podstron
+    </div>
+</body>
+
+</html>
